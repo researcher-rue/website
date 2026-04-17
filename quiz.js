@@ -29,8 +29,8 @@ const quizQuestions = [
     question: "Ruqayya's skills include :",
     answers: {
       a: "Quantitative data analysis",
-      b: "Research translation and communication",
-      c: "Stakeholder and community engagement",
+      b: "Event-related potentials",
+      c: "Mixed-effects modelling",
       d: "All of the above"
     },
     correctAnswer: "d"
