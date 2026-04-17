@@ -1,0 +1,325 @@
+/* ---------------------------
+   Base + Reset
+--------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 2.0;
+  color: #111;
+  background: #F6F8F4;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------
+   Layout
+--------------------------- */
+main {
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* ---------------------------
+   TYPOGRAPHY
+--------------------------- */
+h1, h2, h3 {
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.8 rem;
+   text-align: center;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: 1.25rem;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* ---------------------------
+   TOP PANE (HEADER + NAV)
+--------------------------- */
+.top-pane {
+  background: #2f4f4f;         /* green academic pane */
+  color: white;
+  border-radius: 0 0 1rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  margin: 0;              /* removes centering */
+  border-radius: 0;       /* optional: makes it edge-to-edge */
+  background: #2f4f4f;
+}
+
+/* ---------------------------
+   HEADER inside pane
+--------------------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.headshot {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text h1 {
+  margin: 0;
+  color: white;
+}
+
+.header-text p {
+  margin: 0.25rem 0 0 0;
+  color: #e0e0e0;
+}
+
+/* ---------------------------
+   NAVIGATION (inside pane)
+--------------------------- */
+nav {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 0.75rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  transition: background 0.2s ease;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ---------------------------
+   LINKS (outside nav)
+--------------------------- */
+a {
+  color: #0b57d0;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ---------------------------
+   ACCESSIBILITY
+--------------------------- */
+:focus-visible {
+  outline: 3px solid #0b57d0;
+  outline-offset: 3px;
+}
+
+/* ---------------------------
+   BRAIN IMAGE (below content)
+--------------------------- */
+main > figure {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+main > figure img {
+  width: 60%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+
+/* ---------------------------
+   ABOUT SECTION LAYOUT (image + text)
+--------------------------- */
+.about-layout {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Image container */
+.about-layout figure {
+  margin-top: 8rem;/* mvoes image down */
+  flex: 0 0 300px; /* controls image size */
+}
+
+/* Image styling */
+.about-layout img {
+  width: 140%;
+  border-radius: 9px;
+}
+
+/* Text takes remaining space */
+#about {
+  flex: 1;
+}
+
+
+/* ---------------------------
+   MOBILE RESPONSIVENESS
+--------------------------- */
+@media (max-width: 600px) {
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-layout figure {
+    width: 100%;
+  }
+
+  main > figure img {
+    width: 90%;
+  }
+}
+/* ---------------------------
+   CARDS (projects/publications)
+--------------------------- */
+article,
+#publications {
+  border: 1px solid #adc5a1;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;     /* reduced */
+  margin: 0.8rem auto;       /* reduced spacing */
+  max-width: 900px;          /* key fix */
+  background: #fafafa;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+article:hover,
+#publications:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* ---------------------------
+   FORMS
+--------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #adc5a1;
+  border-radius: 0.5rem;
+  font: inherit;
+}
+
+/* ---------------------------
+   BUTTONS
+--------------------------- */
+button {
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: #0b57d0;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0948ad;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* ---------------------------
+   FOOTER
+--------------------------- */
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;    
+  color: #333;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-radius: 0;
+  background: #F6F8F4;
+
+}
+
+/* ---------------------------
+   RESPONSIVE DESIGN
+--------------------------- */
+@media (max-width: 600px) {
+
+  .top-pane {
+    padding: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    gap: 0.75rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
